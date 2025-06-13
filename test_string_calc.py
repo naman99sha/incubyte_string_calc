@@ -21,3 +21,6 @@ def test_negative_number_raises_exception():
 def test_multiple_negative_numbers_exception():
     with pytest.raises(ValueError, match="negative numbers not allowed -1,-2"):
         add("1,-1,-2")
+
+def test_newline_as_delimiter():
+    assert add("1\n2,3") == 6
