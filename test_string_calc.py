@@ -24,3 +24,15 @@ def test_multiple_negative_numbers_exception():
 
 def test_newline_as_delimiter():
     assert add("1\n2,3") == 6
+
+def test_custom_single_char_delimiter():
+    assert add("//;\n1;2") == 3
+
+def test_custom_multi_char_delimiter():
+    assert add("//[***]\n1***2***3") == 6
+
+def test_multiple_custom_delimiters():
+    assert add("//[*][%]\n1*2%3") == 6
+
+def test_multiple_multi_char_delimiters():
+    assert add("//[***][%%]\n1***2%%3") == 6
